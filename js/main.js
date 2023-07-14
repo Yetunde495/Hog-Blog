@@ -178,6 +178,21 @@ window.addEventListener("click", function(event) {
     
 })(jQuery);
 
+window.addEventListener('DOMContentLoaded', function() {
+  var navItems = document.querySelectorAll('.category-nav-item');
+
+  navItems.forEach(function(navItem) {
+    navItem.addEventListener('mouseenter', function() {
+      this.classList.add('active');
+    });
+
+    navItem.addEventListener('mouseleave', function() {
+      this.classList.remove('active');
+    });
+  });
+});
+
+
 //Password Toggle
 function togglePasswordVisibility() {
     var passwordInput = document.getElementById("passwordInput");
