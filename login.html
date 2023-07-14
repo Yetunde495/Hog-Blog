@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HOG Blog- Login</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Hog Blog-login" name="keywords" />
+    <meta content="Hog Blog-login" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <header class="bg-primary">
+      <div class="container-fluid p-0 mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light py-2 py-lg-2 px-lg-5">
+          <a href="" class="navbar-brand d-block">
+            <h4 class="m-0 display-5 text-uppercase text-white">HOG</h4>
+          </a>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+            onclick="toggleNavbar()"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-between px-0 px-lg-3"
+            id="navbarCollapse"
+          >
+            <div class="navbar-nav mr-auto py-0">
+              <a href="index.html" class="nav-item nav-link active">Home</a>
+              <a href="category.html" class="nav-item nav-link">Categories</a>
+              <a href="single.html" class="nav-item nav-link">Single News</a>
+              <div class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  >Dropdown</a
+                >
+                <div class="dropdown-menu rounded-0 m-0">
+                  <a href="#" class="dropdown-item">Menu item 1</a>
+                  <a href="#" class="dropdown-item">Menu item 2</a>
+                  <a href="#" class="dropdown-item">Menu item 3</a>
+                </div>
+              </div>
+              <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Navbar End -->
+
+    <div class="container-fluid mt-4 p-5">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center">
+          <div
+            class="contact-form form-width bg-light mb-3 p-5 shadow-lg rounded-lg"
+          >
+            <div id="success"></div>
+            <h3 class="text-center mb-5">Login</h3>
+            <form name="loginForm" id="loginForm" novalidate="novalidate">
+              <div class="mb-3 d-block">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                  <input
+                    id="email"
+                    type="email"
+                    class="form-control p-4"
+                    placeholder="Email"
+                    name="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    required
+                  />
+                </div>
+                <div class="error-message text-danger text-sm"></div>
+              </div>
+              <div class="mb-3 d-block">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="password"
+                    class="form-control p-4 br-transparent"
+                    placeholder="Create Password"
+                    id="passwordInput"
+                    name="password"
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                    required
+                  />
+                  <div class="input-group-prepend">
+                    <span
+                      class="input-group-text bg-transparent password-toggle"
+                      onclick="togglePasswordVisibility()"
+                    >
+                    </span>
+                  </div>
+                </div>
+                <div class="error-message text-danger text-sm"></div>
+              </div>
+
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    id="remember"
+                    name="remember"
+                    value=""
+                  />
+                  <label for="remember"> Remember me</label>
+                </div>
+                <a class="link">Forgot Password?</a>
+              </div>
+
+              <div class="d-flex justify-content-center mb-2">
+                <button
+                  class="btn btn-primary font-weight-semi-bold px-4 w-100"
+                  style="height: 50px"
+                  type="submit"
+                  onclick="submitLoginForm(event)"
+                >
+                  Login
+                </button>
+              </div>
+              <p class="text-center">
+                Don't have an account?
+                <span
+                  ><a href="create-account.html" class="link btn btn-link">
+                    Signup
+                  </a></span
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Start -->
+
+    <section
+      class="footer pr pt-6 pt-md-8 bg-primary border-top border-white-10"
+    >
+      <footer class="py-8 mt-4 py-md-11 bg-gray-200 p-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-4 col-lg-6 mb-6">
+              <a href="#" class="navbar-brand"
+                ><img src="img/logo.jpeg" class="pb-3"
+              /></a>
+              <h5 class="text-white">Newsletter</h5>
+              <p class="text-white mb-6">
+                Subscribe to get notified about new posts, <br />
+                product launches and special news
+              </p>
+              <form class="" action="index.html" method="post">
+                <div class="row">
+                  <div class="col">
+                    <input
+                      class="form-control"
+                      type="email"
+                      name=""
+                      value=""
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div class="col-auto ms-n5">
+                    <button
+                      type="submit"
+                      name="button"
+                      class="btn btn-outline-success"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2 mt-2">
+              <h6 class="fw-bold text-uppercase text-bold-700 text-white mb-3">
+                Quick Links
+              </h6>
+              <ul class="list-unstyled footer-link-div mb-6 mb-md-8 md-lg-0">
+                <li class="mb-1"><a href="#">Home</a></li>
+                <li class="mb-1"><a href="#">Search</a></li>
+                <li class="mb-1"><a href="#">Contact Us</a></li>
+                <li class="mb-1"><a href="#">About Us</a></li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2 mt-2">
+              <h6 class="fw-bold text-uppercase text-bold-700 text-white mb-3">
+                Services
+              </h6>
+              <ul class="list-unstyled footer-link-div mb-6 mb-md-8 md-lg-0">
+                <li class="mb-1"><a href="#">Advertise</a></li>
+                <li class="mb-1"><a href="#">Submit A Story</a></li>
+                <li class="mb-1"><a href="#">HOG Marketplace</a></li>
+                <li class="mb-1"><a href="#">Affiliate Program</a></li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-md-4 offset-md-4 col-lg-2 offset-lg-0 mt-2">
+              <h6 class="fw-bold text-uppercase text-bold-700 text-white mb-3">
+                Popular Tags
+              </h6>
+              <div class="d-flex flex-column justify-content-start">
+                <a class="text-secondary mb-2" href="#"
+                  ><i class="fa fa-angle-right text-dark mr-2"></i>DIY</a
+                >
+                <a class="text-secondary mb-2" href="#"
+                  ><i class="fa fa-angle-right text-dark mr-2"></i>Health &
+                  Wellness</a
+                >
+                <a class="text-secondary mb-2" href="#"
+                  ><i class="fa fa-angle-right text-dark mr-2"></i>Buying
+                  Guide</a
+                >
+                <a class="text-secondary" href="#"
+                  ><i class="fa fa-angle-right text-dark mr-2"></i>HOG Tv</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <hr class="" />
+
+      <div
+        class="d-flex justify-content-between align-items-center py-4 px-sm-3 px-md-5"
+      >
+        <p class="m-0 text-center">&copy;HOG Blog 2021. All Rights Reserved</p>
+        <div class="d-flex justify-content-start mt-4">
+          <a
+            class="btn btn-outline-secondary rounded-lg text-center mr-2 px-0"
+            style="width: 38px; height: 38px"
+            href="#"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary rounded-lg text-center mr-2 px-0"
+            style="width: 38px; height: 38px"
+            href="#"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary rounded-lg text-center mr-2 px-0"
+            style="width: 38px; height: 38px"
+            href="#"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            class="btn btn-outline-secondary rounded-lg text-center mr-2 px-0"
+            style="width: 38px; height: 38px"
+            href="#"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-dark back-to-top"
+      ><i class="fa fa-angle-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
